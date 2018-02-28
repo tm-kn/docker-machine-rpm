@@ -5,7 +5,7 @@ Summary:    Machine management for Docker
 License:    ASL 2.0
 URL: https://github.com/docker/machine
 Source0:    https://github.com/docker/machine/archive/v%{version}.tar.gz
-BuildRequires: golang golint rsync openssh-clients make
+BuildRequires: golang golint rsync openssh-clients make git
 Suggests: docker
 
 %global debug_package %{nil}
