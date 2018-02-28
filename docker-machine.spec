@@ -31,7 +31,6 @@ make build
 export GOPATH="$PWD"
 cd src/github.com/docker/machine
 make test GOLINT=/usr/bin/golint
-make validate GOLINT=/usr/bin/golint
 
 %install
 mkdir -p %{buildroot}%{_bindir}
