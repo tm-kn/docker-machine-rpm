@@ -35,7 +35,7 @@ make test GOLINT=/usr/bin/golint
 %install
 mkdir -p %{buildroot}%{_bindir}
 install -m755 bin/docker-machine* %{buildroot}%{_bindir}/
-install -D -p -m 644 contrib/completion/bash/docker-machine.bash %{buildroot}%{_datadir}/bash-completion/completions/docker-machine.bash
+install -D -p -m 644 contrib/completion/bash/docker-machine.bash %{buildroot}%{_datadir}/bash-completion/completions/docker-machine
 install -D -p -m 644 contrib/completion/zsh/_docker-machine %{buildroot}%{_datadir}/zsh-completion/completions/_docker-machine
 
 %clean
@@ -46,8 +46,8 @@ make clean
 %files
 %doc README.md LICENSE
 %{_bindir}/docker-machine*
-%{_datadir}/bash-completion
-%{_datadir}/zsh-completion
+%{_datadir}/bash-completion/completions/docker-machine
+%{_datadir}/zsh-completion/completions/_docker-machine
 
 %changelog
 
