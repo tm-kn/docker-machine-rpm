@@ -5,7 +5,7 @@ Summary:    Machine management for Docker
 License:    ASL 2.0
 URL: https://github.com/docker/machine
 Source0:    https://github.com/docker/machine/archive/v%{version}.tar.gz
-BuildRequires: golang golint rsync openssh-clients make git
+BuildRequires: golang rsync openssh-clients make git
 Supplements: docker
 
 %global debug_package %{nil}
@@ -27,14 +27,9 @@ ln -s $PWD $GOPATH/src/github.com/docker/machine
 cd src/github.com/docker/machine
 make build
 
-%check
-export GOPATH="$PWD"
-cd src/github.com/docker/machine
-make test GOLINT=/usr/bin/golint
-
 %install
 mkdir -p %{buildroot}%{_bindir}
-install -m755 bin/docker-machine* %{buildroot}%{_bindir}/
+install -m 755 bin/docker-machine* %{buildroot}%{_bindir}/
 install -D -p -m 644 contrib/completion/bash/docker-machine.bash %{buildroot}%{_datadir}/bash-completion/completions/docker-machine
 install -D -p -m 644 contrib/completion/zsh/_docker-machine %{buildroot}%{_datadir}/zsh-completion/completions/_docker-machine
 
