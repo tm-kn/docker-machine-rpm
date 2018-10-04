@@ -1,5 +1,5 @@
 Name:       docker-machine
-Version:    0.13.0
+Version:    0.15.0
 Release:    1%{?dist}
 Summary:    Machine management for Docker
 License:    ASL 2.0
